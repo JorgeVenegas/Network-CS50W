@@ -1,0 +1,11 @@
+a {
+  cursor: pointer;
+}
+
+.liked {
+  fill: red;
+}
+
+.post-stats {
+  cursor: pointer;
+}

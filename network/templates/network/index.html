@@ -1,0 +1,20 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+<h1>All Posts</h1>
+<div class="card text-bg-light border-light mb-5">
+    <div class="card-body">
+        <h3 class="card-title">New Post</h3>
+        <textarea class="form-control mb-3" name="new-post" id="new-post" rows="5"></textarea>
+        <button class="btn btn-primary" id="add-new-post">Post</button>
+    </div>
+</div>
+
+<div id="posts-view">
+
+</div>
+{% block script %}
+<script type="module" src="{% static 'network/index.js' %}"></script>
+{% endblock %}
+{% endblock %}
