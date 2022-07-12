@@ -14,7 +14,31 @@
 <div id="posts-view">
 
 </div>
+
+<div class="modal fade" id="replyPostModal" tabindex="-1" aria-labelledby="commentPostModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="commentPostModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="commentPostModalBody">
+                <div id="commentPostModalBodyPost">
+
+                </div>
+                <hr>
+                <div id="commentPostModalBodyReply" class="col-12">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Reply</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% block script %}
-<script type="module" src="{% static 'network/index.js' %}"></script>
+<script type="module" src="{% static 'network/index.mjs' %}"></script>
 {% endblock %}
 {% endblock %}
