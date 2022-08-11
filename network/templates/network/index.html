@@ -2,20 +2,49 @@
 {% load static %}
 
 {% block body %}
-<h1>All Posts</h1>
-<div class="card text-bg-light border-light mb-5">
-    <div class="card-body">
-        <h3 class="card-title">New Post</h3>
-        <textarea class="form-control mb-3" name="new-post" id="new-post" rows="5"></textarea>
-        <button class="btn btn-primary" id="add-new-post">Post</button>
+
+<h1 id="h1-title"></h1>
+<div id="header"></div>
+
+<div id="posts-view"></div>
+<nav id="posts-pagnation">
+    <ul class="pagination justify-content-center">
+        <li id="previous-page" class="page-item disabled">
+            <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item"><a id="current-page" class="page-link"></a></li>
+        <li id="next-page" class="page-item disabled">
+            <a class="page-link">Next</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="modal fade" id="editPostModal" tabindex="-1" aria-labelledby="editPostModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editPostModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="edit-post-form">
+                <div class="modal-body" id="editPostModalBody">
+                    <h4>Old:</h4>
+                    <div id="editPostModalBodyPost"></div>
+                    <hr>
+                    <h4>New:</h4>
+                    <div id="editPostModalBodyInput" class="col-12"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="edit-post-btn" type="submit" class="btn btn-primary"
+                        data-bs-dismiss="modal">Edit</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div id="posts-view">
-
-</div>
-
-<div class="modal fade" id="replyPostModal" tabindex="-1" aria-labelledby="commentPostModalLabel" aria-hidden="true">
+<!--div class="modal fade" id="replyPostModal" tabindex="-1" aria-labelledby="commentPostModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -37,7 +66,7 @@
             </div>
         </div>
     </div>
-</div>
+</div-->
 {% block script %}
 <script type="module" src="{% static 'network/index.mjs' %}"></script>
 {% endblock %}

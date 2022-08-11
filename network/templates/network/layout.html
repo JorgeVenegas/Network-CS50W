@@ -16,9 +16,11 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <span id="csrf-token" style="display: none;">{{ csrf_token }}</span>
+    <span id="current-user" style="display: none;">{{ request.user.username }}</span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Network</a>
+            <a class="navbar-brand" href="{% url 'index' %}">Network</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
                 aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,15 +30,15 @@
                     <ul class="navbar-nav mr-auto">
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><strong>{{ user.username }}</strong></a>
+                            <a id="nav-username" class="nav-link fw-bold">{{ user.username }}</a>
                         </li>
                         {% endif %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index' %}">All Posts</a>
+                            <a id="nav-feed" class="nav-link">All Posts</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Following</a>
+                            <a id="nav-following" class="nav-link">Following</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout' %}">Log Out</a>

@@ -1,9 +1,48 @@
-a {
+body {
+  min-width: 100vh;
+}
+  a {
   cursor: pointer;
+}
+
+.post {
+  transition: background 0.10s ease-in-out;
+  cursor: pointer;
+}
+
+.post:hover {
+  background-color: #dddddd !important;
+}
+
+.a-author {
+  text-decoration: none !important; 
 }
 
 .liked {
   fill: red;
+  color: red;
+}
+
+.unliked {
+  transition: fill 0.10s;
+  transition: color 0.10s;
+}
+
+.unliked:hover {
+  fill: red;
+  color: red;
+}
+
+.reply {
+  transition: font-weight 0.10s;
+  transition: fill 0.10s;
+  transition: color 0.10s;
+}
+
+.reply:hover {
+  fill: green;
+  color: green;
+  font-weight: 500;
 }
 
 .post-stats {
